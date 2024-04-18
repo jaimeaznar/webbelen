@@ -43,72 +43,105 @@
                     class="btn btn-primary">Cómo llegar</a>
             </div>
         </div>
-        <form class="gform" method="POST" data-email="jaimeaznarupv@gmail.com"
-            action="https://script.google.com/macros/s/AKfycbwgFFFjmoyE0dY-QyczVCL6_gMzHnNCBOftkweiqPg3_4cKmR1IuOeuHT7w63hbwKmp/exec">
 
 
-            <div class="form-elements">
-                <fieldset class="pure-group">
-                    <label for="familia">Nombre asistente / Familia: </label>
-                    <input id="familia" name="Familia"
-                        placeholder="What your Mom calls you" />
-                </fieldset>
-
-                <!--ASISTENCIA-->
-                <fieldset class="pure-group">
-                    <legend>Asistencia:</legend>
-                    <input id="radio-group--si" type="radio" name="asistencia"
-                        value="si" /> <label
-                        for="radio-group--javascript">Si</label>
-                    <input id="radio-group--no" type="radio" name="asistencia"
-                        value="no" /> <label for="radio-group--java">No</label>
-                </fieldset>
-
-                <!--number-->
-                <fieldset class="pure-group">
-                    <label for="asistentes">Numero de asistentes</label>
-                    <input id="asistentes" type="number" name="asistentes"
-                        value="0" />
-                </fieldset>
-
-
-
-                <!--text-area-->
-                <fieldset class="pure-group">
-                    <label for="text-area">Intolerancias/Alergias: </label>
-                    <textarea id="text-area" name="Intolerancias"
-                        rows="10"></textarea>
-                </fieldset>
-
-                <!--radio group-->
-                <fieldset class="pure-group">
-                    <legend>Ruta:</legend>
-                    <input id="radio-group--R1" type="radio" name="ruta"
-                        value="Ruta 1" /> <label
-                        for="radio-group--javascript">Ruta 1</label>
-                    <input id="radio-group--R2" type="radio" name="ruta"
-                        value="Ruta 2" /> <label
-                        for="radio-group--javascript">Ruta 2</label>
-                    <input id="radio-group--R3" type="radio" name="ruta"
-                        value="Ruta 3" /> <label
-                        for="radio-group--javascript">Ruta 3</label>
-
-                </fieldset>
-
-
-                <button class="button-success pure-button button-xlarge">
-                    <i class="fa fa-paper-plane"></i>&nbsp;Send</button>
+        <form class="gform needs-validation" method="POST"
+            data-email="jaimeaznarupv@gmail.com"
+            action="https://script.google.com/macros/s/AKfycbwgFFFjmoyE0dY-QyczVCL6_gMzHnNCBOftkweiqPg3_4cKmR1IuOeuHT7w63hbwKmp/exec"
+            novalidate>
+            <div class="mb-3">
+                <label for="familia" class="form-label">Nombre asistente /
+                    Familia:</label>
+                <input type="text" class="form-control" id="familia"
+                    name="Familia" required>
+                <div class="invalid-feedback">
+                    Please provide a valid name.
+                </div>
             </div>
+
+            <!-- ASISTENCIA -->
+            <div class="mb-3">
+                <label class="form-label">Asistencia:</label>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio"
+                        name="asistencia" id="radio-group--si" value="si"
+                        required onchange="toggleFormElements(true);">
+                    <label class="form-check-label" for="radio-group--si">
+                        Si
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio"
+                        name="asistencia" id="radio-group--no" value="no"
+                        onchange="toggleFormElements(false);">
+                    <label class="form-check-label" for="radio-group--no">
+                        No
+                    </label>
+                </div>
+            </div>
+
+            <!-- Número de asistentes -->
+            <div class="mb-3">
+                <label for="asistentes" class="form-label">Número de
+                    asistentes:</label>
+                <input type="number" class="form-control" id="asistentes"
+                    name="asistentes" value="0" required>
+            </div>
+
+            <!-- Intolerancias/Alergias -->
+            <div class="mb-3">
+                <label for="text-area"
+                    class="form-label">Intolerancias/Alergias:</label>
+                <textarea class="form-control" id="text-area"
+                    name="Intolerancias" rows="3"></textarea>
+            </div>
+
+            <!-- Ruta -->
+            <fieldset class="mb-3">
+                <legend>Ruta:</legend>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="ruta"
+                        id="radio-group--R1" value="Ruta 1">
+                    <label class="form-check-label" for="radio-group--R1">
+                        Ruta 1
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="ruta"
+                        id="radio-group--R2" value="Ruta 2">
+                    <label class="form-check-label" for="radio-group--R2">
+                        Ruta 2
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="ruta"
+                        id="radio-group--R3" value="Ruta 3">
+                    <label class="form-check-label" for="radio-group--R3">
+                        Ruta 3
+                    </label>
+                </div>
+            </fieldset>
+
+            <!-- Submit Button -->
+            <button type="submit" class="btn btn-primary btn-lg">Enviar</button>
 
             <!-- Customise the Thankyou Message People See when they submit the form: -->
             <div class="thankyou_message" style="display:none;">
-                <h2><em>Gracias!</em></h2>
+                <h2><em>Gracias!</em> Tu respuesta ha sido registrada.</h2>
             </div>
-
-
-
-
         </form>
+
+        <!-- JavaScript to toggle form elements -->
+        <script>
+            function toggleFormElements(isEnabled) {
+                document.getElementById('asistentes').disabled = !isEnabled;
+                document.getElementById('text-area').disabled = !isEnabled;
+                document.querySelectorAll('[name="ruta"]').forEach((elem) => {
+                    elem.disabled = !isEnabled;
+                });
+            }
+        </script>
+
 
         <script data-cfasync="false"
             src="src/js/form-submission-handler.js"></script>
