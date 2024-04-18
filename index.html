@@ -43,6 +43,75 @@
                     class="btn btn-primary">Cómo llegar</a>
             </div>
         </div>
+        <form class="gform" method="POST" data-email="jaimeaznarupv@gmail.com"
+            action="https://script.google.com/macros/s/AKfycbwgFFFjmoyE0dY-QyczVCL6_gMzHnNCBOftkweiqPg3_4cKmR1IuOeuHT7w63hbwKmp/exec">
+
+
+            <div class="form-elements">
+                <fieldset class="pure-group">
+                    <label for="familia">Nombre asistente / Familia: </label>
+                    <input id="familia" name="Familia"
+                        placeholder="What your Mom calls you" />
+                </fieldset>
+
+                <!--ASISTENCIA-->
+                <fieldset class="pure-group">
+                    <legend>Asistencia:</legend>
+                    <input id="radio-group--si" type="radio" name="asistencia"
+                        value="si" /> <label
+                        for="radio-group--javascript">Si</label>
+                    <input id="radio-group--no" type="radio" name="asistencia"
+                        value="no" /> <label for="radio-group--java">No</label>
+                </fieldset>
+
+                <!--number-->
+                <fieldset class="pure-group">
+                    <label for="asistentes">Numero de asistentes</label>
+                    <input id="asistentes" type="number" name="asistentes"
+                        value="0" />
+                </fieldset>
+
+
+
+                <!--text-area-->
+                <fieldset class="pure-group">
+                    <label for="text-area">Intolerancias/Alergias: </label>
+                    <textarea id="text-area" name="Intolerancias"
+                        rows="10"></textarea>
+                </fieldset>
+
+                <!--radio group-->
+                <fieldset class="pure-group">
+                    <legend>Ruta:</legend>
+                    <input id="radio-group--R1" type="radio" name="ruta"
+                        value="Ruta 1" /> <label
+                        for="radio-group--javascript">Ruta 1</label>
+                    <input id="radio-group--R2" type="radio" name="ruta"
+                        value="Ruta 2" /> <label
+                        for="radio-group--javascript">Ruta 2</label>
+                    <input id="radio-group--R3" type="radio" name="ruta"
+                        value="Ruta 3" /> <label
+                        for="radio-group--javascript">Ruta 3</label>
+
+                </fieldset>
+
+
+                <button class="button-success pure-button button-xlarge">
+                    <i class="fa fa-paper-plane"></i>&nbsp;Send</button>
+            </div>
+
+            <!-- Customise the Thankyou Message People See when they submit the form: -->
+            <div class="thankyou_message" style="display:none;">
+                <h2><em>Gracias!</em></h2>
+            </div>
+
+
+
+
+        </form>
+
+        <script data-cfasync="false"
+            src="src/js/form-submission-handler.js"></script>
     </div>
     <script
         src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
