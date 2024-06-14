@@ -67,16 +67,6 @@
             data.append('hotel_name', hotelNameInput.value);
         }
 
-        // Ensure "asistentes" and "menores" are included
-        var asistentesInput = document.getElementById('asistentes');
-        if (asistentesInput) {
-            data.append('asistentes', asistentesInput.value);
-        }
-
-        var menoresInput = document.getElementById('menores');
-        if (menoresInput) {
-            data.append('menores', menoresInput.value);
-        }
 
         disableAllButtons(form);
         var url = form.action;
