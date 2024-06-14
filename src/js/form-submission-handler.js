@@ -61,6 +61,12 @@
             return false;
         }
 
+        // Add the hotel name if applicable
+        var hotelNameInput = document.getElementById('hotel-name');
+        if (hotelNameInput && hotelNameInput.value) {
+            data.append('hotel_name', hotelNameInput.value);
+        }
+
         disableAllButtons(form);
         var url = form.action;
         var xhr = new XMLHttpRequest();
