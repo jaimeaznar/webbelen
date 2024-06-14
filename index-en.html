@@ -216,6 +216,15 @@
                     elem.disabled = !isEnabled;
                 });
             }
+
+            function toggleHotelNameInput(radio) {
+                var hotelNameDiv = document.getElementById('hotel-name-div');
+                if (radio.id === 'radio-group--R1' || radio.id === 'radio-group--R3') {
+                    hotelNameDiv.style.display = 'block';
+                } else {
+                    hotelNameDiv.style.display = 'none';
+                }
+            }
         </script>
 
 
