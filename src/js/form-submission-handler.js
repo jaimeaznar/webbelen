@@ -61,9 +61,9 @@
             return false;
         }
 
-        // Add the hotel name if applicable
+        // Add the hotel name if it is visible and has a value
         var hotelNameInput = document.getElementById('hotel-name');
-        if (hotelNameInput && hotelNameInput.value) {
+        if (hotelNameInput && hotelNameInput.value && hotelNameInput.style.display === 'block') {
             data.append('hotel_name', hotelNameInput.value);
         }
 
