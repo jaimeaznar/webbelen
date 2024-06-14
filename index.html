@@ -169,6 +169,13 @@
                         No.
                     </label>
                 </div>
+
+                <!-- Hotel Name Input -->
+                <div class="mb-3 hotel-name" id="hotel-name-div">
+                    <label for="hotel-name" class="form-label">Nombre del hotel:</label>
+                    <input type="text" class="form-control" id="hotel-name" name="hotel_name">
+                </div>
+                
             </fieldset>
 
             <!-- Submit Button -->
@@ -200,6 +207,14 @@
                 document.querySelectorAll('[name="ruta"]').forEach((elem) => {
                     elem.disabled = !isEnabled;
                 });
+            }
+            function toggleHotelNameInput(radio) {
+                var hotelNameDiv = document.getElementById('hotel-name-div');
+                if (radio.value === 'SI HOTEL' || radio.value === 'AMBOS') {
+                    hotelNameDiv.style.display = 'block';
+                } else {
+                    hotelNameDiv.style.display = 'none';
+                }
             }
         </script>
 
