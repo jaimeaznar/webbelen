@@ -193,6 +193,7 @@
         <script>
             function toggleFormElements(isEnabled) {
                 document.getElementById('asistentes').disabled = !isEnabled;
+                document.getElementById('menores').disabled = !isEnabled;
                 document.getElementById('text-area').disabled = !isEnabled;
                 document.querySelectorAll('[name="ruta"]').forEach((elem) => {
                     elem.disabled = !isEnabled;
