@@ -62,6 +62,7 @@
                     the established time.</p>
             </div>
         </div>
+<<<<<<< HEAD
 
         <!-- DATO -->
         <div class="card mb-3" style="width: 100%; max-width: 30rem;">
@@ -78,6 +79,9 @@
             </div>
         </div>
 
+=======
+        
+>>>>>>> 8d0b0fdeab3082e4b817d045242c5a06e31bed1c
         <!-- IGLESIA -->
         <div class="card mb-3" style="width: 100%; max-width: 30rem;">
             <img src="src/img/iglesia.jpg" class="card-img-top" alt="iglesia">
@@ -150,17 +154,25 @@
 
             <!-- Número de asistentes -->
             <div class="mb-3">
+<<<<<<< HEAD
                 <label for="asistentes" class="form-label">Number of
                     adults:</label>
+=======
+                <label for="asistentes" class="form-label">Number of attendees:</label>
+>>>>>>> 8d0b0fdeab3082e4b817d045242c5a06e31bed1c
                 <input type="number" class="form-control" id="asistentes"
-                    name="asistentes" value="0" required>
+                    name="asistentes" required>
             </div>
 
             <div class="mb-3">
+<<<<<<< HEAD
                 <label for="asistentes" class="form-label">Number of
                     kids:</label>
+=======
+                <label for="menores" class="form-label">Number of attendees that will require a kids menu:</label>
+>>>>>>> 8d0b0fdeab3082e4b817d045242c5a06e31bed1c
                 <input type="number" class="form-control" id="menores"
-                    name="asistentes" value="0" required>
+                    name="menores" required>
             </div>
 
             <!-- Intolerancias/Alergias -->
@@ -177,31 +189,37 @@
                 <p>¿Do you need transport the day of the wedding?</p>
                 <div class="form-check">
                     <input class="form-check-input" type="radio" name="ruta"
-                        id="radio-group--R1" value="SI HOTEL">
+                        id="radio-group--R1" value="SI HOTEL" onchange="toggleHotelNameInput(this);">
                     <label class="form-check-label" for="radio-group--R1">
                         Yes, from the hotel to the church.
                     </label>
                 </div>
                 <div class="form-check">
                     <input class="form-check-input" type="radio" name="ruta"
-                        id="radio-group--R2" value="SI IGLESIA">
+                        id="radio-group--R2" value="SI IGLESIA" onchange="toggleHotelNameInput(this);">
                     <label class="form-check-label" for="radio-group--R2">
                         Yes, from the church to the reception.
                     </label>
                 </div>
                 <div class="form-check">
                     <input class="form-check-input" type="radio" name="ruta"
-                        id="radio-group--R3" value="AMBOS">
+                        id="radio-group--R3" value="AMBOS" onchange="toggleHotelNameInput(this);">
                     <label class="form-check-label" for="radio-group--R3">
                         Yes, both of the above.
                     </label>
                 </div>
                 <div class="form-check">
                     <input class="form-check-input" type="radio" name="ruta"
-                        id="radio-group--R4" value="NO">
+                        id="radio-group--R4" value="NO" onchange="toggleHotelNameInput(this);">
                     <label class="form-check-label" for="radio-group--R4">
                         No.
                     </label>
+                </div>
+
+                <!-- Hotel Name Input -->
+                <div class="mb-3 hotel-name" id="hotel-name-div" style="display: none;">
+                    <label for="hotel-name" class="form-label">Hotel Name:</label>
+                    <input type="text" class="form-control" id="hotel-name" name="hotel_name">
                 </div>
             </fieldset>
 
@@ -217,6 +235,7 @@
         <!-- DATO -->
         <div class="card mb-3" style="width: 100%; max-width: 30rem;">
             <div class="card-body">
+<<<<<<< HEAD
                 <h5 class="card-title">Contribution</h5>
                 <p class="card-text">Your attendance is your best gift but for
                     those who wish and are able, here is a link where you can
@@ -226,6 +245,15 @@
                     ES35-0049-7037-7121-1000-9011</p>
                 <a
                     href="https://www.elcorteingles.es/listas/bodamas/eventos/oomokg-boda-de-belen-y-victor-von-plettenberg/">https://www.elcorteingles.es/listas/bodamas/eventos/oomokg-boda-de-belen-y-victor-von-plettenberg/</a>
+=======
+                <h5 class="card-title">Present</h5>
+                <p class="card-text">Your attendance is your best gift but for those who wish and are able, here is a link where you can contribute to a gift or if you prefer, we leave you our bank details.</p>
+                <p class="card-text" type="text">IBAN: ES35-0049-7037-7121-1000-9011</p>
+                <p class="card-text" type="text">SWIFT: BSCHESMM</p>
+                <p class="card-text" type="text">ACCOUNT HOLDER: MARIA BELÉN AZNAR COFFEY. VICTOR GRAF VON PLETTENBERG</p>
+                <a href="https://www.elcorteingles.es/listas/bodamas/eventos/oomokg-boda-de-belen-y-victor-von-plettenberg/"
+                    >https://www.elcorteingles.es/listas/bodamas/eventos/oomokg-boda-de-belen-y-victor-von-plettenberg/</a>
+>>>>>>> 8d0b0fdeab3082e4b817d045242c5a06e31bed1c
             </div>
         </div>
 
@@ -238,6 +266,15 @@
                 document.querySelectorAll('[name="ruta"]').forEach((elem) => {
                     elem.disabled = !isEnabled;
                 });
+            }
+
+            function toggleHotelNameInput(radio) {
+                var hotelNameDiv = document.getElementById('hotel-name-div');
+                if (radio.id === 'radio-group--R1' || radio.id === 'radio-group--R3') {
+                    hotelNameDiv.style.display = 'block';
+                } else {
+                    hotelNameDiv.style.display = 'none';
+                }
             }
         </script>
 

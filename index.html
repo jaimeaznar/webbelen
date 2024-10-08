@@ -138,16 +138,20 @@
             <!-- Número de asistentes -->
             <div class="mb-3">
                 <label for="asistentes" class="form-label">Número de
-                    asistentes adultos:</label>
+                    asistentes:</label>
                 <input type="number" class="form-control" id="asistentes"
                     name="asistentes" required>
             </div>
 
             <div class="mb-3">
-                <label for="asistentes" class="form-label">Número de
-                    asistentes menores:</label>
+                <label for="menores" class="form-label">Número de
+                    asistentes que requieran menú infantil:</label>
                 <input type="number" class="form-control" id="menores"
+<<<<<<< HEAD
                     name="asistentes" required>
+=======
+                    name="menores" required>
+>>>>>>> 8d0b0fdeab3082e4b817d045242c5a06e31bed1c
             </div>
 
             <!-- Intolerancias/Alergias -->
@@ -164,32 +168,39 @@
                 <p>¿necesitas transporte el dia de la boda?</p>
                 <div class="form-check">
                     <input class="form-check-input" type="radio" name="ruta"
-                        id="radio-group--R1" value="SI HOTEL">
+                        id="radio-group--R1" value="SI HOTEL" onchange="toggleHotelNameInput(this);">
                     <label class="form-check-label" for="radio-group--R1">
                         Si, del hotel a la iglesia.
                     </label>
                 </div>
                 <div class="form-check">
                     <input class="form-check-input" type="radio" name="ruta"
-                        id="radio-group--R2" value="SI IGLESIA">
+                        id="radio-group--R2" value="SI IGLESIA" onchange="toggleHotelNameInput(this);">
                     <label class="form-check-label" for="radio-group--R2">
                         Si, de la iglesia al banquete.
                     </label>
                 </div>
                 <div class="form-check">
                     <input class="form-check-input" type="radio" name="ruta"
-                        id="radio-group--R3" value="AMBOS">
+                        id="radio-group--R3" value="AMBOS" onchange="toggleHotelNameInput(this);">
                     <label class="form-check-label" for="radio-group--R3">
                         Si, ambos.
                     </label>
                 </div>
                 <div class="form-check">
                     <input class="form-check-input" type="radio" name="ruta"
-                        id="radio-group--R4" value="NO">
+                        id="radio-group--R4" value="NO" onchange="toggleHotelNameInput(this);">
                     <label class="form-check-label" for="radio-group--R4">
                         No.
                     </label>
                 </div>
+
+                <!-- Hotel Name Input -->
+                <div class="mb-3 hotel-name" id="hotel-name-div" style="display: none;">
+                    <label for="hotel-name" class="form-label">Nombre del hotel:</label>
+                    <input type="text" class="form-control" id="hotel-name" name="hotel_name">
+                </div>
+                
             </fieldset>
 
             <!-- Submit Button -->
@@ -204,6 +215,7 @@
         <!-- DATO -->
         <div class="card mb-3" style="width: 100%; max-width: 30rem;">
             <div class="card-body">
+<<<<<<< HEAD
                 <h5 class="card-title">Contribución</h5>
                 <p class="card-text">Tu presencia el día de nuestra boda es tu
                     mejor regalo pero para los que quieran y puedan aquí os
@@ -213,6 +225,16 @@
                     ES35-0049-7037-7121-1000-9011</p>
                 <a
                     href="https://www.elcorteingles.es/listas/bodamas/eventos/oomokg-boda-de-belen-y-victor-von-plettenberg/">https://www.elcorteingles.es/listas/bodamas/eventos/oomokg-boda-de-belen-y-victor-von-plettenberg/</a>
+=======
+                <h5 class="card-title">Regalo</h5>
+                <p class="card-text">Tu presencia el día de nuestra boda es tu mejor regalo pero para los que quieran y puedan aquí os dejamos un enlace donde podéis contribuir con un regalo o si lo preferís os dejamos nuestros datos bancarios.</p>
+                <p class="card-text" type="text">IBAN: ES35-0049-7037-7121-1000-9011</p>
+                <p class="card-text" type="text">SWIFT: BSCHESMM</p>
+                <p class="card-text" type="text">TITULARES: MARIA BELÉN AZNAR COFFEY. VICTOR GRAF VON PLETTENBERG</p>
+                
+                <a href="https://www.elcorteingles.es/listas/bodamas/eventos/oomokg-boda-de-belen-y-victor-von-plettenberg/"
+                    >https://www.elcorteingles.es/listas/bodamas/eventos/oomokg-boda-de-belen-y-victor-von-plettenberg/</a>
+>>>>>>> 8d0b0fdeab3082e4b817d045242c5a06e31bed1c
             </div>
         </div>
 
@@ -225,6 +247,14 @@
                 document.querySelectorAll('[name="ruta"]').forEach((elem) => {
                     elem.disabled = !isEnabled;
                 });
+            }
+            function toggleHotelNameInput(radio) {
+                var hotelNameDiv = document.getElementById('hotel-name-div');
+                if (radio.id === 'radio-group--R1' || radio.id === 'radio-group--R3') {
+                    hotelNameDiv.style.display = 'block';
+                } else {
+                    hotelNameDiv.style.display = 'none';
+                }
             }
         </script>
 
